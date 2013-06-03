@@ -31,13 +31,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(defrule|defmodule|deftemplate|not|or|and|assert|retract|gensym)\b</string>
+			<string>\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym)\b</string>
 			<key>name</key>
 			<string>support.function.clips</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>=&amp;gt;</string>
+			<string>=&gt;</string>
 			<key>name</key>
 			<string>constant.language.clips</string>
 		</dict>

@@ -13,12 +13,12 @@
   },
 
   {
-  	"match": "\\b(defrule|defmodule|deftemplate|not|or|and|assert|retract|gensym)\\b",
+  	"match": "\\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym)\\b",
   	"name": "support.function.clips"
   },
 
   {
-  	"match": "=&gt;",
+  	"match": "=>",
   	"name": "constant.language.clips"
   },
 
