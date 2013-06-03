@@ -1,0 +1,44 @@
+{ "name": "CLIPS",
+  "scopeName": "source.clips",
+  "fileTypes": ["clp", "clips"],
+  "foldingStartMarker": "\\(",
+  "foldingStopMarker": "\\)",
+  "patterns": [
+  {
+  	"match": "(?:^[ \\t]+)?(;).*$\\n?",
+  	"name": "comment.line.semicolon.clips",
+		"captures": {
+		  "1": { "name": "punctuation.definition.comment.clips" }
+		}	
+  },
+
+  {
+  	"match": "\\b(defrule|defmodule|deftemplate|not|or|and|assert|retract|gensym)\\b",
+  	"name": "support.function.clips"
+  },
+
+  {
+  	"match": "=&gt;",
+  	"name": "constant.language.clips"
+  },
+
+  {
+  	"match": "(\\?[a-zA-Z_]+)\\w*",
+  	"name": "variable.other.matching.clips",
+		"captures": {
+		  "1": { "name": "variable.other.clips" }
+		}	
+  },
+
+  {
+  	"match": "(^.*(defrule|slot)[ \\t]+)([a-zA-Z0-9_\\-]+)",
+  	"name": "meta.function.clips",
+		"captures": {
+		  "2": { "name": "keyword.control.clips" },
+		  "3": { "name": "entity.name.function.clips" }
+		}	
+  }
+
+  ],
+  "uuid": "1b2ecbe9-9ccb-401d-8707-9440305081df"
+}

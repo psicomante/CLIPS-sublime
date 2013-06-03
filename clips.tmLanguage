@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>clp</string>
+		<string>clips</string>
+	</array>
+	<key>foldingStartMarker</key>
+	<string>\(</string>
+	<key>foldingStopMarker</key>
+	<string>\)</string>
+	<key>name</key>
+	<string>CLIPS</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.clips</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?:^[ \t]+)?(;).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.semicolon.clips</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(defrule|defmodule|deftemplate|not|or|and|assert|retract|gensym)\b</string>
+			<key>name</key>
+			<string>support.function.clips</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>=&amp;gt;</string>
+			<key>name</key>
+			<string>constant.language.clips</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.clips</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\?[a-zA-Z_]+)\w*</string>
+			<key>name</key>
+			<string>variable.other.matching.clips</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.clips</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.clips</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(^.*(defrule|slot)[ \t]+)([a-zA-Z0-9_\-]+)</string>
+			<key>name</key>
+			<string>meta.function.clips</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.clips</string>
+	<key>uuid</key>
+	<string>1b2ecbe9-9ccb-401d-8707-9440305081df</string>
+</dict>
+</plist>
