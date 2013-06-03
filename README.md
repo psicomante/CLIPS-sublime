@@ -1,7 +1,7 @@
 CLIPS-sublime
 =============
 
-#CLIPS Syntax Highlighter for Sublime Text and TextMate#
+##CLIPS Syntax Highlighter for Sublime Text and TextMate##
 
 This package provides syntax highlighting and automated build for the [CLIPS] [1] language. 
 It is highly work in progress, so use with care.
