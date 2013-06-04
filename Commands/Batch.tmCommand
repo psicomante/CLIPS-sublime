@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string># just to remind you of some useful environment variables
+# see Help / Environment Variables for the full list
+#echo File: "$TM_FILEPATH"
+#echo Word: "$TM_CURRENT_WORD"
+#echo Selection: "$TM_SELECTED_TEXT"
+
+content () {
+	iconv -cs -f utf-8 -t macroman//TRANSLIT | perl -pe 's/["\\]/\\$&amp;/g'
+}
+
+osascript &lt;&lt;-APPLESCRIPT
+	tell application "CLIPS IDE"
+		activate
+		batch text "$(content)
+"
+	end tell
+APPLESCRIPT</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
+	<key>name</key>
+	<string>Batch</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.clips</string>
+	<key>uuid</key>
+	<string>ABA5DFB9-068E-49D6-97FF-4AE3CE8BC869</string>
+</dict>
+</plist>
