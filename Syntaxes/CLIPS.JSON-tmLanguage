@@ -9,7 +9,8 @@
   	"name": "comment.line.semicolon.clips",
 		"captures": {
 		  "1": { "name": "punctuation.definition.comment.clips" }
-		}	
+		},
+    "comment": "Comments"
   },
 
   {

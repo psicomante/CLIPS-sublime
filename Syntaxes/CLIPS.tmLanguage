@@ -24,6 +24,8 @@
 					<string>punctuation.definition.comment.clips</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Comments</string>
 			<key>match</key>
 			<string>(?:^[ \t]+)?(;).*$\n?</string>
 			<key>name</key>

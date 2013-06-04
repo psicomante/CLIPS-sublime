@@ -1,32 +1,38 @@
-CLIPS-sublime
-=============
+#CLIPS Syntax Highlighter for Sublime Text and TextMate
 
-##CLIPS Syntax Highlighter for Sublime Text and TextMate##
+## What's this thingie?
 
-This package provides syntax highlighting and automated build for the [CLIPS] [1] language. 
-It is highly work in progress, so use with care.
+This package provides syntax highlighting for the language used in [CLIPS] [1], a forward chaining production system in the field of Artificial Intelligence.
 
-[1]: http://clipsrules.sourceforge.net/
+The origins of the C Language Integrated Production System (CLIPS) date back to 1984 at NASA's Johnson Space Center. More info at [CLIPS History](http://clipsrules.sourceforge.net/WhatIsCLIPS.html#History)
 
-## Installation ##
+## Sublime Text 2 Installation
 
-### Installation via Sublime Package Control ###
+### With Sublime Package Control
 
-I recommend using the [Sublime Package Control] [2] to install this package. 
-This way is much more convenient. It is named *CLIPS syntax highlighting* 
-there, as well.
+I recommend using the excellent [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install Sublime Text 2 packages.
 
-[2]: http://wbond.net/sublime_packages/package_control
+Once you have Package Control installed, activate your Command Palette and choose ```Package Control: Install Package```.
 
-### Manual installation (linux ###
+Then, search for **CLIPS Rules* and press Enter. In mere moments you'll be up and running with full syntax highlighting, tab completion and more. Huzzah!
 
-If you want to manually install this package, please do:
+## TextMate Installation
 
-  cd /tmp
-	wget -O CLIPS-sublime.tar.gz https://github.com/psicomante/CLIPS-sublime/tarball/master
-	tar -xzvf CLIPS-sublime.tar.gz
-	cd psicomante-CLIPS-sublime-<commit>
-	mv clips.tmLanguage ~/.config/sublime-text-2/Packages/User/
+### With git
+
+    mkdir -p ~/Library/Application\ Support/TextMate/Bundles/
+    cd ~/Library/Application\ Support/TextMate/Bundles/
+    git clone https://github.com/nathos/sass-textmate-bundle.git Sass.tmbundle
+    osascript -e 'tell app "TextMate" to reload bundles'
+
+### Without git
+    mkdir -p ~/Library/Application\ Support/TextMate/Bundles
+    cd ~/Library/Application\ Support/TextMate/Bundles
+    mkdir sass-textmate-bundle.tmbundle && curl -L https://github.com/nathos/sass-textmate-bundle/tarball/master | tar xz --strip 1 -C sass-textmate-bundle.tmbundle
+    osascript -e 'tell app "TextMate" to reload bundles'
+
+## About & Credit
+This was originally a fork of <http://blog.iharder.net/2009/04/06/clips-formatting-bundle-for-textmate>.
 
 ## License ##
 
@@ -34,3 +40,5 @@ This Source Code Form is subject to the terms of the GNU General Public License 
 If a copy of the GPL was not distributed with this file, You can obtain 
 one at <http://www.gnu.org/licenses/gpl.html>.
 
+
+[1]: http://clipsrules.sourceforge.net/
