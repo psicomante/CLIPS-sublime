@@ -22,13 +22,13 @@ Then, search for **CLIPS Rules* and press Enter. In mere moments you'll be up an
 
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles/
     cd ~/Library/Application\ Support/TextMate/Bundles/
-    git clone https://github.com/nathos/sass-textmate-bundle.git Sass.tmbundle
+    git clone https://github.com/psicomante/CLIPS-sublime CLIPS.tmbundle
     osascript -e 'tell app "TextMate" to reload bundles'
 
 ### Without git
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles
     cd ~/Library/Application\ Support/TextMate/Bundles
-    mkdir sass-textmate-bundle.tmbundle && curl -L https://github.com/nathos/sass-textmate-bundle/tarball/master | tar xz --strip 1 -C sass-textmate-bundle.tmbundle
+    mkdir clips-textmate-bundle.tmbundle && curl -L https://github.com/psicomante/CLIPS-sublime/tarball/master | tar xz --strip 1 -C clips-textmate-bundle.tmbundle
     osascript -e 'tell app "TextMate" to reload bundles'
 
 ## About & Credit
