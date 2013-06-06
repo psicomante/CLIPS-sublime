@@ -1,18 +1,10 @@
-{ "name": "CLIPS",
+{ 
+  "name": "CLIPS",
   "scopeName": "source.clips",
   "fileTypes": ["clp", "clips"],
   "foldingStartMarker": "\\(",
   "foldingStopMarker": "\\)",
   "patterns": [
-
-  {
-  	"match": "(?:^[ \\t]+)?(;).*$\\n?",
-  	"name": "comment.line.semicolon.clips",
-		"captures": {
-		  "1": { "name": "punctuation.definition.comment.clips" }
-		},
-    "comment": "Comments"
-  },
 
   {
   	"match": "\\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym|printout|declare|salience)\\b",
@@ -43,40 +35,23 @@
 
   {
       "include": "#strings"
-  }  
+  },
 
+  {
+      "include": "#comments"
+  }
   ],
   "repository": {
       "comments": {
           "patterns": [
               {
-                  "begin": "/\\*", 
-                  "captures": {
-                      "0": {
-                          "name": "punctuation.definition.comment.d"
-                      }
-                  }, 
-                  "end": "\\*/", 
-                  "name": "comment.block.d"
-              }, 
-              {
-                  "begin": "/\\+", 
-                  "captures": {
-                      "0": {
-                          "name": "punctuation.definition.comment.d"
-                      }
-                  }, 
-                  "end": "\\+/", 
-                  "name": "comment.block.nested.d"
-              }, 
-              {
                   "captures": {
                       "1": {
-                          "name": "punctuation.definition.comment.d"
+                          "name": "punctuation.definition.comment.clips"
                       }
                   }, 
-                  "match": "(//).*$\\n?", 
-                  "name": "comment.line.double-slash.d"
+                  "match": "(;).*$\\n?", 
+                  "name": "comment.line.comma.clips"
               }
           ]
       }, 

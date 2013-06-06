@@ -16,22 +16,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.clips</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Comments</string>
-			<key>match</key>
-			<string>(?:^[ \t]+)?(;).*$\n?</string>
-			<key>name</key>
-			<string>comment.line.semicolon.clips</string>
-		</dict>
-		<dict>
 			<key>match</key>
 			<string>\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym|printout|declare|salience)\b</string>
 			<key>name</key>
@@ -80,6 +64,10 @@
 			<key>include</key>
 			<string>#strings</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#comments</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -88,50 +76,18 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>/\*</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.d</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\*/</string>
-					<key>name</key>
-					<string>comment.block.d</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>/\+</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.d</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\+/</string>
-					<key>name</key>
-					<string>comment.block.nested.d</string>
-				</dict>
-				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.d</string>
+							<string>punctuation.definition.comment.clips</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(//).*$\n?</string>
+					<string>(;).*$\n?</string>
 					<key>name</key>
-					<string>comment.line.double-slash.d</string>
+					<string>comment.line.comma.clips</string>
 				</dict>
 			</array>
 		</dict>
@@ -187,7 +143,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?&lt;-")(")|")</string>
+					<string>((?&lt;=")(")|")</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
