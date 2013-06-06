@@ -4,6 +4,7 @@
   "foldingStartMarker": "\\(",
   "foldingStopMarker": "\\)",
   "patterns": [
+
   {
   	"match": "(?:^[ \\t]+)?(;).*$\\n?",
   	"name": "comment.line.semicolon.clips",
@@ -14,7 +15,7 @@
   },
 
   {
-  	"match": "\\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym)\\b",
+  	"match": "\\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym|printout|declare|salience)\\b",
   	"name": "support.function.clips"
   },
 
@@ -38,8 +39,135 @@
 		  "2": { "name": "keyword.control.clips" },
 		  "3": { "name": "entity.name.function.clips" }
 		}	
-  }
+  },
+
+  {
+      "include": "#strings"
+  }  
 
   ],
+  "repository": {
+      "comments": {
+          "patterns": [
+              {
+                  "begin": "/\\*", 
+                  "captures": {
+                      "0": {
+                          "name": "punctuation.definition.comment.d"
+                      }
+                  }, 
+                  "end": "\\*/", 
+                  "name": "comment.block.d"
+              }, 
+              {
+                  "begin": "/\\+", 
+                  "captures": {
+                      "0": {
+                          "name": "punctuation.definition.comment.d"
+                      }
+                  }, 
+                  "end": "\\+/", 
+                  "name": "comment.block.nested.d"
+              }, 
+              {
+                  "captures": {
+                      "1": {
+                          "name": "punctuation.definition.comment.d"
+                      }
+                  }, 
+                  "match": "(//).*$\\n?", 
+                  "name": "comment.line.double-slash.d"
+              }
+          ]
+      }, 
+      "strings": {
+          "patterns": [
+              {
+                  "begin": "\"", 
+                  "beginCaptures": {
+                      "0": {
+                          "name": "punctuation.definition.string.begin.d"
+                      }
+                  }, 
+                  "end": "\"", 
+                  "endCaptures": {
+                      "0": {
+                          "name": "punctuation.definition.string.end.d"
+                      }
+                  }, 
+                  "name": "string.quoted.double.d", 
+                  "patterns": [
+                      {
+                          "include": "#string_escaped_char"
+                      }
+                  ]
+              }, 
+              {
+                  "begin": "(r)(\")", 
+                  "beginCaptures": {
+                      "1": {
+                          "name": "storage.type.string.d"
+                      }, 
+                      "2": {
+                          "name": "punctuation.definition.string.begin.d"
+                      }
+                  }, 
+                  "end": "((?<=\")(\")|\")", 
+                  "endCaptures": {
+                      "1": {
+                          "name": "punctuation.definition.string.end.d"
+                      }, 
+                      "2": {
+                          "name": "meta.empty-string.double.d"
+                      }
+                  }, 
+                  "name": "string.quoted.double.raw.d", 
+                  "patterns": [
+                      {
+                          "include": "#regular_expressions"
+                      }
+                  ]
+              }, 
+              {
+                  "begin": "`", 
+                  "beginCaptures": {
+                      "0": {
+                          "name": "punctuation.definition.string.begin.d"
+                      }
+                  }, 
+                  "end": "((?<=`)(`)|`)", 
+                  "endCaptures": {
+                      "1": {
+                          "name": "punctuation.definition.string.end.d"
+                      }, 
+                      "2": {
+                          "name": "meta.empty-string.double.d"
+                      }
+                  }, 
+                  "name": "string.quoted.double.raw.backtick.d"
+              }, 
+              {
+                  "begin": "'", 
+                  "beginCaptures": {
+                      "0": {
+                          "name": "punctuation.definition.string.begin.d"
+                      }
+                  }, 
+                  "end": "'", 
+                  "endCaptures": {
+                      "0": {
+                          "name": "punctuation.definition.string.end.d"
+                      }
+                  }, 
+                  "name": "string.quoted.single.d", 
+                  "patterns": [
+                      {
+                          "include": "#string_escaped_char"
+                      }
+                  ]
+              }
+          ]
+      }
+  }, 
   "uuid": "1b2ecbe9-9ccb-401d-8707-9440305081df"
 }
