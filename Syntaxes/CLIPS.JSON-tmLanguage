@@ -7,25 +7,20 @@
   "patterns": [
 
   {
-  	"match": "\\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym|printout|declare|salience)\\b",
+  	"match": "\\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience)\\b",
   	"name": "support.function.clips"
   },
 
   {
-  	"match": "=>",
-  	"name": "constant.language.clips"
-  },
-
-  {
-  	"match": "(\\?[a-zA-Z_]+)\\w*",
-  	"name": "variable.other.matching.clips",
+  	"match": "(\\?)",
+    "name": "meta.function.clips",
 		"captures": {
-		  "1": { "name": "variable.other.clips" }
+		  "1": { "name": "support.function.clips" }
 		}	
   },
 
   {
-  	"match": "(^.*(defrule|slot)[ \\t]+)([a-zA-Z0-9_\\-]+)",
+  	"match": "(^.*(defrule|deffacts|defmodule|deftemplate)[ \\t]+)([a-zA-Z0-9_\\-]+)",
   	"name": "meta.function.clips",
 		"captures": {
 		  "2": { "name": "keyword.control.clips" },
@@ -39,9 +34,49 @@
 
   {
       "include": "#comments"
+  },
+
+  {
+      "include": "#keywords"
   }
   ],
   "repository": {
+      "keywords": {
+        "patterns": [
+            {
+                "match": "\\b(s(truct|elect|witch)|c(ontinue|ase)|type|i(nterface|f|mport)|def(er|ault)|package|else|var|f(or|unc|allthrough)|r(eturn|ange)|go(to)?|map|break)\\b", 
+                "name": "keyword.control.clips"
+            }, 
+            {
+                "match": "(\\b|(?<=\\]))(int(16|8|32|64)?|uint(16|8|32|ptr|64)?|float(32|64)?|b(yte|ool)|string)\\b", 
+                "name": "storage.type.clips"
+            }, 
+            {
+                "match": "\\b(const|chan)\\b", 
+                "name": "storage.modifier.clips"
+            }, 
+            {
+                "match": "\\b(nil|true|false|iota)\\b", 
+                "name": "constant.language.clips"
+            }, 
+            {
+                "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b", 
+                "name": "constant.numeric.clips"
+            }, 
+            {
+                "match": "(!|&&|=>|\\|\\|)", 
+                "name": "constant.language.clips"
+            }, 
+        {
+            "match": "(\\- |\\+|\\*|\\/|~|%)", 
+            "name": "constant.language.clips"
+        },             
+            {
+                "match": "(<\\-)", 
+                "name": "constant.language.clips"
+            }          
+        ]
+      },     
       "comments": {
           "patterns": [
               {

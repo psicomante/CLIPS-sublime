@@ -17,15 +17,9 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(defrule|defmodule|deftemplate|deffacts|not|or|and|assert|retract|gensym|printout|declare|salience)\b</string>
+			<string>\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience)\b</string>
 			<key>name</key>
 			<string>support.function.clips</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>=&gt;</string>
-			<key>name</key>
-			<string>constant.language.clips</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -33,13 +27,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.clips</string>
+					<string>support.function.clips</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\?[a-zA-Z_]+)\w*</string>
+			<string>(\?)</string>
 			<key>name</key>
-			<string>variable.other.matching.clips</string>
+			<string>meta.function.clips</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -56,7 +50,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(^.*(defrule|slot)[ \t]+)([a-zA-Z0-9_\-]+)</string>
+			<string>(^.*(defrule|deffacts|defmodule|deftemplate)[ \t]+)([a-zA-Z0-9_\-]+)</string>
 			<key>name</key>
 			<string>meta.function.clips</string>
 		</dict>
@@ -67,6 +61,10 @@
 		<dict>
 			<key>include</key>
 			<string>#comments</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#keywords</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -88,6 +86,60 @@
 					<string>(;).*$\n?</string>
 					<key>name</key>
 					<string>comment.line.comma.clips</string>
+				</dict>
+			</array>
+		</dict>
+		<key>keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(s(truct|elect|witch)|c(ontinue|ase)|type|i(nterface|f|mport)|def(er|ault)|package|else|var|f(or|unc|allthrough)|r(eturn|ange)|go(to)?|map|break)\b</string>
+					<key>name</key>
+					<string>keyword.control.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\b|(?&lt;=\]))(int(16|8|32|64)?|uint(16|8|32|ptr|64)?|float(32|64)?|b(yte|ool)|string)\b</string>
+					<key>name</key>
+					<string>storage.type.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(const|chan)\b</string>
+					<key>name</key>
+					<string>storage.modifier.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(nil|true|false|iota)\b</string>
+					<key>name</key>
+					<string>constant.language.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
+					<key>name</key>
+					<string>constant.numeric.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(!|&amp;&amp;|=&gt;|\|\|)</string>
+					<key>name</key>
+					<string>constant.language.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\- |\+|\*|\/|~|%)</string>
+					<key>name</key>
+					<string>constant.language.clips</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(&lt;\-)</string>
+					<key>name</key>
+					<string>constant.language.clips</string>
 				</dict>
 			</array>
 		</dict>
