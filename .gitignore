@@ -1,4 +1,5 @@
 Commands/*
 .DS_Store
 
-Syntaxes/CLIPS.tmLanguage.cache
+# plugin cache
+*.cache
