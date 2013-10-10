@@ -31,7 +31,7 @@ Then, search for **CLIPS Rules* and press Enter. In mere moments you'll be up an
     mkdir clips-textmate-bundle.tmbundle && curl -L https://github.com/psicomante/CLIPS-sublime/tarball/master | tar xz --strip 1 -C clips-textmate-bundle.tmbundle
     osascript -e 'tell app "TextMate" to reload bundles'
 
-## About & Credit
+## About & Credits
 This was originally a fork of <http://blog.iharder.net/2009/04/06/clips-formatting-bundle-for-textmate>.
 
 ## License ##
