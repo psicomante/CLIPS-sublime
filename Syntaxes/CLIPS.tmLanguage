@@ -18,6 +18,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>include</key>
+			<string>#comments</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\b</string>
 			<key>name</key>
@@ -64,10 +68,6 @@
 			<string>(INTEGER|SYMBOL|NONE|DERIVE)</string>
 			<key>name</key>
 			<string>string</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#comments</string>
 		</dict>
 		<dict>
 			<key>include</key>

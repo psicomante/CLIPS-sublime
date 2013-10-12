@@ -8,6 +8,10 @@
   "patterns": [
 
     {
+        "include": "#comments"
+    },
+
+    {
       "match": "\\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\\b",
       "name": "support.function.clips"
     },
@@ -33,10 +37,6 @@
     {
       "match": "(INTEGER|SYMBOL|NONE|DERIVE)",
       "name" : "string"
-    },
-
-    {
-        "include": "#comments"
     },
 
     {
