@@ -64,11 +64,6 @@
     "comments": {
       "patterns": [
           {
-            "captures": {
-                "1": {
-                    "name": "punctuation.definition.comment.clips"
-                }
-            },
             "match": "(;).*$\\n?",
             "name": "comment.line.comma.clips"
           }
