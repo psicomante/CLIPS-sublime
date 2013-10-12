@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -19,7 +19,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\b</string>
+			<string>\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\b</string>
 			<key>name</key>
 			<string>support.function.clips</string>
 		</dict>
@@ -50,13 +50,18 @@
 					<key>name</key>
 					<string>keyword.control.clips</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable</string>
+				</dict>
 			</dict>
 			<key>match</key>
 			<string>(^.*(defrule|deffacts|defmodule|deftemplate)[ \t]+)([a-zA-Z0-9_\-]+)</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(INTEGER)</string>
+			<string>(INTEGER|SYMBOL|NONE|DERIVE)</string>
 			<key>name</key>
 			<string>string</string>
 		</dict>
@@ -103,19 +108,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(\- |\+|\*|\/|~|%)</string>
+					<string>(&lt;-|=&gt;|~|%)</string>
 					<key>name</key>
 					<string>constant.language.clips</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(&lt;\-)</string>
-					<key>name</key>
-					<string>constant.language.clips</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(!|&amp;&amp;|=&gt;|\|\|)</string>
+					<string>(|=|&gt;|\-|\+|\*|\/|~|%)</string>
 					<key>name</key>
 					<string>constant.language.clips</string>
 				</dict>

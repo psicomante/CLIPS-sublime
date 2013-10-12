@@ -8,7 +8,7 @@
   "patterns": [
 
     {
-      "match": "\\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\\b",
+      "match": "\\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\\b",
       "name": "support.function.clips"
     },
 
@@ -24,12 +24,14 @@
     {
       "match": "(^.*(defrule|deffacts|defmodule|deftemplate)[ \\t]+)([a-zA-Z0-9_\\-]+)",
       "captures": {
+        "3": { "name": "variable"},
         "2": { "name": "keyword.control.clips" }
       }
     },
 
+
     {
-      "match": "(INTEGER)",
+      "match": "(INTEGER|SYMBOL|NONE|DERIVE)",
       "name" : "string"
     },
 
@@ -39,7 +41,7 @@
 
     {
         "include": "#keywords"
-    }
+    },
   ],
 
   "repository": {
@@ -50,17 +52,13 @@
           "name" : "constant.other.color.rgb-value.css"
         },
         {
-          "match": "(\\- |\\+|\\*|\\/|~|%)",
+          "match": "(<-|=>|~|%)",
           "name": "constant.language.clips"
         },
         {
-          "match": "(<\\-)",
+          "match": "(|=|>|\\-|\\+|\\*|\\/|~|%)",
           "name": "constant.language.clips"
         },
-        {
-          "match": "(!|&&|=>|\\|\\|)",
-          "name": "constant.language.clips"
-        }
       ]
     },
     "comments": {
