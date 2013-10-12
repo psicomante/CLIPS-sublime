@@ -11,13 +11,15 @@
 	<string>\(</string>
 	<key>foldingStopMarker</key>
 	<string>\)</string>
+	<key>keyEquivalent</key>
+	<string>^~L</string>
 	<key>name</key>
 	<string>CLIPS</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience)\b</string>
+			<string>\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify)\b</string>
 			<key>name</key>
 			<string>support.function.clips</string>
 		</dict>
@@ -31,7 +33,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\?)</string>
+			<string>(\?)([a-zA-Z0-9_\-]+)</string>
 			<key>name</key>
 			<string>meta.function.clips</string>
 		</dict>

@@ -1,0 +1,40 @@
+[
+  {
+    "caption": "Preferences",
+    "mnemonic": "n",
+    "id": "preferences",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "CLIPS-sublime",
+            "children":
+            [
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/CLIPS-sublime/README.md"},
+                "caption": "README"
+              },
+              { "caption": "-" },
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/CLIPS-sublime/CLIPS-sublime.sublime-settings"},
+                "caption": "Settings – Default"
+              },
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/User/CLIPS-sublime.sublime-settings"},
+                "caption": "Settings – User"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

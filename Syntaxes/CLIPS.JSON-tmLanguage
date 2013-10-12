@@ -1,22 +1,24 @@
-{ 
+{
   "name": "CLIPS",
   "scopeName": "source.clips",
   "fileTypes": ["clp", "clips"],
   "foldingStartMarker": "\\(",
   "foldingStopMarker": "\\)",
+  "keyEquivalent" : "^~L",
   "patterns": [
 
   {
-  	"match": "\\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience)\\b",
+  	"match": "\\b(slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify)\\b",
   	"name": "support.function.clips"
   },
 
   {
-  	"match": "(\\?)",
+    "match": "(\\?)([a-zA-Z0-9_\\-]+)",
     "name": "meta.function.clips",
-		"captures": {
-		  "1": { "name": "support.function.clips" }
-		}	
+      "captures": {
+       "1": { "name": "keyword.control.clips" }
+       "2": { "name": "entity.name.function.clips" }
+      }
   },
 
   {
@@ -25,7 +27,7 @@
 		"captures": {
 		  "2": { "name": "keyword.control.clips" },
 		  "3": { "name": "entity.name.function.clips" }
-		}	
+		}
   },
 
   {
@@ -44,39 +46,39 @@
       "keywords": {
         "patterns": [
             {
-                "match": "\\b(s(truct|elect|witch)|c(ontinue|ase)|type|i(nterface|f|mport)|def(er|ault)|package|else|var|f(or|unc|allthrough)|r(eturn|ange)|go(to)?|map|break)\\b", 
+                "match": "\\b(s(truct|elect|witch)|c(ontinue|ase)|type|i(nterface|f|mport)|def(er|ault)|package|else|var|f(or|unc|allthrough)|r(eturn|ange)|go(to)?|map|break)\\b",
                 "name": "keyword.control.clips"
-            }, 
+            },
             {
-                "match": "(\\b|(?<=\\]))(int(16|8|32|64)?|uint(16|8|32|ptr|64)?|float(32|64)?|b(yte|ool)|string)\\b", 
+                "match": "(\\b|(?<=\\]))(int(16|8|32|64)?|uint(16|8|32|ptr|64)?|float(32|64)?|b(yte|ool)|string)\\b",
                 "name": "storage.type.clips"
-            }, 
+            },
             {
-                "match": "\\b(const|chan)\\b", 
+                "match": "\\b(const|chan)\\b",
                 "name": "storage.modifier.clips"
-            }, 
+            },
             {
-                "match": "\\b(nil|true|false|iota)\\b", 
+                "match": "\\b(nil|true|false|iota)\\b",
                 "name": "constant.language.clips"
-            }, 
+            },
             {
-                "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b", 
+                "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
                 "name": "constant.numeric.clips"
-            }, 
+            },
             {
-                "match": "(!|&&|=>|\\|\\|)", 
+                "match": "(!|&&|=>|\\|\\|)",
                 "name": "constant.language.clips"
-            }, 
+            },
         {
-            "match": "(\\- |\\+|\\*|\\/|~|%)", 
+            "match": "(\\- |\\+|\\*|\\/|~|%)",
             "name": "constant.language.clips"
-        },             
+        },
             {
-                "match": "(<\\-)", 
+                "match": "(<\\-)",
                 "name": "constant.language.clips"
-            }          
+            }
         ]
-      },     
+      },
       "comments": {
           "patterns": [
               {
@@ -84,92 +86,92 @@
                       "1": {
                           "name": "punctuation.definition.comment.clips"
                       }
-                  }, 
-                  "match": "(;).*$\\n?", 
+                  },
+                  "match": "(;).*$\\n?",
                   "name": "comment.line.comma.clips"
               }
           ]
-      }, 
+      },
       "strings": {
           "patterns": [
               {
-                  "begin": "\"", 
+                  "begin": "\"",
                   "beginCaptures": {
                       "0": {
                           "name": "punctuation.definition.string.begin.d"
                       }
-                  }, 
-                  "end": "\"", 
+                  },
+                  "end": "\"",
                   "endCaptures": {
                       "0": {
                           "name": "punctuation.definition.string.end.d"
                       }
-                  }, 
-                  "name": "string.quoted.double.d", 
+                  },
+                  "name": "string.quoted.double.d",
                   "patterns": [
                       {
                           "include": "#string_escaped_char"
                       }
                   ]
-              }, 
+              },
               {
-                  "begin": "(r)(\")", 
+                  "begin": "(r)(\")",
                   "beginCaptures": {
                       "1": {
                           "name": "storage.type.string.d"
-                      }, 
+                      },
                       "2": {
                           "name": "punctuation.definition.string.begin.d"
                       }
-                  }, 
-                  "end": "((?<=\")(\")|\")", 
+                  },
+                  "end": "((?<=\")(\")|\")",
                   "endCaptures": {
                       "1": {
                           "name": "punctuation.definition.string.end.d"
-                      }, 
+                      },
                       "2": {
                           "name": "meta.empty-string.double.d"
                       }
-                  }, 
-                  "name": "string.quoted.double.raw.d", 
+                  },
+                  "name": "string.quoted.double.raw.d",
                   "patterns": [
                       {
                           "include": "#regular_expressions"
                       }
                   ]
-              }, 
+              },
               {
-                  "begin": "`", 
+                  "begin": "`",
                   "beginCaptures": {
                       "0": {
                           "name": "punctuation.definition.string.begin.d"
                       }
-                  }, 
-                  "end": "((?<=`)(`)|`)", 
+                  },
+                  "end": "((?<=`)(`)|`)",
                   "endCaptures": {
                       "1": {
                           "name": "punctuation.definition.string.end.d"
-                      }, 
+                      },
                       "2": {
                           "name": "meta.empty-string.double.d"
                       }
-                  }, 
+                  },
                   "name": "string.quoted.double.raw.backtick.d"
-              }, 
+              },
               {
-                  "begin": "'", 
+                  "begin": "'",
                   "beginCaptures": {
                       "0": {
                           "name": "punctuation.definition.string.begin.d"
                       }
-                  }, 
-                  "end": "'", 
+                  },
+                  "end": "'",
                   "endCaptures": {
                       "0": {
                           "name": "punctuation.definition.string.end.d"
                       }
-                  }, 
-                  "name": "string.quoted.single.d", 
+                  },
+                  "name": "string.quoted.single.d",
                   "patterns": [
                       {
                           "include": "#string_escaped_char"
@@ -178,6 +180,6 @@
               }
           ]
       }
-  }, 
+  },
   "uuid": "1b2ecbe9-9ccb-401d-8707-9440305081df"
 }
