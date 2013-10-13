@@ -25,7 +25,13 @@
 			<key>match</key>
 			<string>\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\b</string>
 			<key>name</key>
-			<string>support.function.clips</string>
+			<string>keyword.control.clips</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>=&gt;</string>
+			<key>name</key>
+			<string>constant.language.clips</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -33,7 +39,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword</string>
+					<string>keyword.clips</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -42,7 +48,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\?)([a-zA-Z0-9_\-]+)</string>
+			<string>(\?)([a-zA-Z0-9_\-]*)</string>
 			<key>name</key>
 			<string>meta.function.clips</string>
 		</dict>
@@ -52,12 +58,12 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.clips</string>
+					<string>entity.name.function.clips</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable</string>
+					<string>variable.clips</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -100,7 +106,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(&lt;-|=&gt;|~|%)</string>
+					<string>(&lt;-|~|%)</string>
 					<key>name</key>
 					<string>constant.language.clips</string>
 				</dict>

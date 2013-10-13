@@ -1,0 +1,5 @@
+
+{
+  "cmd": ["plutil", "-convert", "json", "-r", "$file", "-o", "$file_path/$file_base_name.JSON-tmLanguage"],
+  "selector" : "source.tmLanguage"
+}

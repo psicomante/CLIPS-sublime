@@ -1,3 +1,4 @@
 {
-  "cmd": ["make", "jsontm"]
+  "cmd": ["plutil", "-convert", "xml1", "$file", "-o", "$file_path/$file_base_name.tmLanguage"],
+  "selector" : "source.JSON-tmLanguage"
 }

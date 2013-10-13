@@ -13,14 +13,19 @@
 
     {
       "match": "\\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\\b",
-      "name": "support.function.clips"
+      "name": "keyword.control.clips"
     },
 
     {
-      "match": "(\\?)([a-zA-Z0-9_\\-]+)",
+        "name": "constant.language.clips",
+        "match": "=>"
+    },
+
+    {
+      "match": "(\\?)([a-zA-Z0-9_\\-]*)",
       "name": "meta.function.clips",
       "captures": {
-       "1": { "name": "keyword" },
+       "1": { "name": "keyword.clips" },
        "2": { "name": "variable.parameter" }
       }
     },
@@ -28,11 +33,10 @@
     {
       "match": "(^.*(defrule|deffacts|defmodule|deftemplate)[ \\t]+)([a-zA-Z0-9_\\-]+)",
       "captures": {
-        "3": { "name": "variable"},
-        "2": { "name": "keyword.control.clips" }
+        "3": { "name": "variable.clips"},
+        "2": { "name": "entity.name.function.clips" }
       }
     },
-
 
     {
       "match": "(INTEGER|SYMBOL|NONE|DERIVE)",
@@ -41,9 +45,8 @@
 
     {
         "include": "#keywords"
-    },
+    }
   ],
-
   "repository": {
     "keywords": {
       "patterns": [
@@ -52,13 +55,13 @@
           "name" : "constant.other.color.rgb-value.css"
         },
         {
-          "match": "(<-|=>|~|%)",
+          "match": "(<-|~|%)",
           "name": "constant.language.clips"
         },
         {
           "match": "(|=|>|\\-|\\+|\\*|\\/|~|%)",
           "name": "constant.language.clips"
-        },
+        }
       ]
     },
     "comments": {
