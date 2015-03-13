@@ -8,7 +8,7 @@ uuid: 1b2ecbe9-9ccb-401d-8707-9440305081df
 patterns:
 - comment: Comments line
   begin: ";"
-  end: "$\\n?"
+  end: "$\n?"
   captures:
     "0": {name: punctuation.definition.comment.clips}
   name: comment.line.double-slash.clips
@@ -35,6 +35,10 @@ patterns:
 - comment: Constant B
   match: (<-|~|%)
   name: constant.language.clips
-- comment: Constant C
-  match: (|=|>|\\-|\\+|\\*|\\/|~|%|neq|eq)
-  name: constant.language.clips
+- comment: Operators
+  match: (|=|>|\+|\*|\/|~|%|neq|eq)
+  name: entity.name.function.clips
+- comment: Operators
+  match: (\()(\-)
+  captures:
+    "2": {name: entity.name.function.clips}

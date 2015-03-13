@@ -24,7 +24,8 @@
 			<key>comment</key>
 			<string>Comments line</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>$
+?</string>
 			<key>name</key>
 			<string>comment.line.double-slash.clips</string>
 		</dict>
@@ -102,11 +103,25 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Constant C</string>
+			<string>Operators</string>
 			<key>match</key>
-			<string>(|=|&gt;|\\-|\\+|\\*|\\/|~|%|neq|eq)</string>
+			<string>(|=|&gt;|\+|\*|\/|~|%|neq|eq)</string>
 			<key>name</key>
-			<string>constant.language.clips</string>
+			<string>entity.name.function.clips</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.clips</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Operators</string>
+			<key>match</key>
+			<string>(\()(\-)</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
