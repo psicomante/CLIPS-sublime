@@ -5,29 +5,40 @@
 	<key>fileTypes</key>
 	<array>
 		<string>clp</string>
-		<string>clips</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>\(</string>
-	<key>foldingStopMarker</key>
-	<string>\)</string>
-	<key>keyEquivalent</key>
-	<string>^~L</string>
 	<key>name</key>
 	<string>CLIPS</string>
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>include</key>
-			<string>#comments</string>
+			<key>begin</key>
+			<string>;</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.clips</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Comments line</string>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>comment.line.double-slash.clips</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Keywords</string>
 			<key>match</key>
 			<string>\b(type|default|allowed-values|slot|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\b</string>
 			<key>name</key>
 			<string>keyword.control.clips</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>RHD</string>
 			<key>match</key>
 			<string>=&gt;</string>
 			<key>name</key>
@@ -47,6 +58,8 @@
 					<string>variable.parameter</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Functions</string>
 			<key>match</key>
 			<string>(\?)([a-zA-Z0-9_\-]*)</string>
 			<key>name</key>
@@ -66,59 +79,36 @@
 					<string>variable.clips</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Definitions</string>
 			<key>match</key>
 			<string>(^.*(defrule|deffacts|defmodule|deftemplate)[ \t]+)([a-zA-Z0-9_\-]+)</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Constant A</string>
 			<key>match</key>
-			<string>(INTEGER|SYMBOL|NONE|DERIVE)</string>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
 			<key>name</key>
-			<string>string</string>
+			<string>constant.other.color.rgb-value.css</string>
 		</dict>
 		<dict>
-			<key>include</key>
-			<string>#keywords</string>
+			<key>comment</key>
+			<string>Constant B</string>
+			<key>match</key>
+			<string>(&lt;-|~|%)</string>
+			<key>name</key>
+			<string>constant.language.clips</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Constant C</string>
+			<key>match</key>
+			<string>(|=|&gt;|\\-|\\+|\\*|\\/|~|%|neq|eq)</string>
+			<key>name</key>
+			<string>constant.language.clips</string>
 		</dict>
 	</array>
-	<key>repository</key>
-	<dict>
-		<key>comments</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(;).*$\n?</string>
-					<key>name</key>
-					<string>comment.line.comma.clips</string>
-				</dict>
-			</array>
-		</dict>
-		<key>keywords</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
-					<key>name</key>
-					<string>constant.other.color.rgb-value.css</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(&lt;-|~|%)</string>
-					<key>name</key>
-					<string>constant.language.clips</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(|=|&gt;|\-|\+|\*|\/|~|%)</string>
-					<key>name</key>
-					<string>constant.language.clips</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
 	<key>scopeName</key>
 	<string>source.clips</string>
 	<key>uuid</key>
