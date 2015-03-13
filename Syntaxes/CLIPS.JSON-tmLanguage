@@ -8,7 +8,7 @@
   "patterns": [
 
     {
-        "include": "#comments"
+      "include": "#comments"
     },
 
     {
@@ -68,7 +68,7 @@
       "patterns": [
           {
             "match": "(;).*$\\n?",
-            "name": "comment.line.comma.clips"
+            "name": "comment.block.clips"
           }
       ]
     }

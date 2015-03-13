@@ -1,0 +1,8 @@
+# [PackageDev] target_format: plist, ext: tmPreferences
+name: Comments
+uuid: 8e07d076-998b-4651-b346-ae73c7fbbf85
+scope: source.clips
+settings:
+  shellVariables:
+  - name: TM_COMMENT_START
+    value: '; '
